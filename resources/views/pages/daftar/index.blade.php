@@ -1,9 +1,12 @@
 @extends('template')
 @section('title', 'Daftar')
 @section('content')
+
+<!-- Menampilkan pesan session -->
     @include('partials.session')
     <section class="container">
-        <form action="{{ route('daftar.store') }}" method="post" class="border border-secondary rounded-4 mb-5"
+    <!-- Membuat formulir pendaftaran mahasiswa     -->
+    <form action="{{ route('daftar.store') }}" method="post" class="border border-secondary rounded-4 mb-5"
             enctype="multipart/form-data">
             @csrf
             <div style="background-color: #E0E0E0; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
@@ -23,6 +26,7 @@
                         @enderror
                     </div>
                 </div>
+                <!-- Membuat form group untuk input nama -->
                 <div class="mb-3 row">
                     <label for="nama" class="col-sm-2 col-form-label">Masukkan Nama</label>
                     <div class="col-sm-10">
@@ -87,6 +91,7 @@
                         @enderror
                     </div>
                 </div>
+                <!-- Membuat form group untuk pilih beasiswa -->
                 <div class="mb-3 row">
                     <label for="beasiswa" class="col-sm-2 col-form-label">Pilih Beasiswa</label>
                     <div class="col-sm-10">
@@ -103,6 +108,7 @@
                         @enderror
                     </div>
                 </div>
+                <!-- Membuat form group untuk upload berkas syarat -->
                 <div class="mb-3 row">
                     <label for="berkas" class="col-sm-2 col-form-label">Upload Berkas Syarat</label>
                     <div class="col-sm-10">
@@ -124,6 +130,8 @@
             </article>
         </form>
     </section>
+
+    <!-- Menambahkan script untuk mengambil data mahasiswa berdasarkan NIM -->
     @push('scripts')
         <script>
             document.getElementById('nim').addEventListener('blur', function() {

@@ -3,6 +3,7 @@
 @section('content')
 @include('partials.session')
     <section>
+        <!-- Menampilkan chart dengan memanggil myChart library -->
         <div style="width: 30%; margin: auto;" class="mb-5">
             <canvas id="myChart"></canvas>
         </div>
@@ -25,6 +26,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- Looping untuk setiap data beasiswa -->
                         @foreach ($dataBeasiswa as $beasiswa)
                             <tr>
                                 <td>{{ $beasiswa->mahasiswa->nama }}</td>

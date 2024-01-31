@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
             'nama_beasiswa' => 'non akademik',
         ] );
         
-        $this->call( [ 
-            MahasiswaSeeder::class,
-        ] );
+        // $this->call( [ 
+        //     MahasiswaSeeder::class,
+        // ] );
     }
 }
