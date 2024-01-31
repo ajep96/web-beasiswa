@@ -35,38 +35,39 @@ Selamat datang di sistem pendaftaran beasiswa online yang telah dikembangkan ole
 2. **Perintah Eksekusi Bahasa Pemrograman**
    - Menyertakan perintah eksekusi berbasis teks, grafik, dan multimedia untuk meningkatkan interaktivitas dan user experience.
     menampilkan grafik
-    ""
+   ```
+   ```
 
 3. **Kode Sesuai Guidelines dan Best Practices**
    - Menuliskan kode sesuai dengan panduan dan praktik terbaik untuk memastikan keberlanjutan dan keterbacaan kode.
 
 4. **Pemrograman Terstruktur**
    - Mengimplementasikan pemrograman terstruktur dengan menggunakan tipe data yang tepat, struktur percabangan, prosedur, fungsi, dan array sesuai aturan penulisan program.
-    " 
-"
+    ```
+    ```
    - perulangan
-    " // Menyimpan berkas ke folder "public/uploads" dan mengambil nama filenya
+     ```
+        // Menyimpan berkas ke folder "public/uploads" dan mengambil nama filenya
         // Menyimpan file berkas pendaftaran
         if ( $request->hasFile( 'berkas' ) ) {
             $berkas     = $request->file( 'berkas' );
             $namaBerkas = time() . '_' . $berkas->getClientOriginalName();
             $berkas->move( public_path( 'berkas' ), $namaBerkas );
-
             Beasiswa::create( $data + [ 'berkas' => $namaBerkas ] );
-
             return redirect()->route( 'hasil' )->with( 'success', 'Data Berhasil diinputkan' );
         }
         else {
             return redirect()->route( 'hasil' )->with( 'error', 'Data Gagal diinputkan, lengkapi data terlebih dahulu' );
-        }
-    "    
+        } 
+     ```
     Kode tersebut hanya melakukan satu perulangan jika file berkas ada, yaitu dengan menggunakanktur percabangan if dan else.
     Jadi, dalam kode di atas, hanya ada satu perulangan yaitu proses penguploadan file dan penyimpanan nama file ke database jika ada file berkas yang diupload.
  
    - Membuat program untuk akses file guna menyimpan dan mengelola data pendaftaran.
     Upload file berkas
-     "// Menyimpan berkas ke folder "public/uploads" dan mengambil nama filenya
-        // Menyimpan file berkas pendaftaran
+```
+         // Menyimpan berkas ke folder "public/uploads" dan mengambil nama filenya
+         // Menyimpan file berkas pendaftaran
         if ( $request->hasFile( 'berkas' ) ) {
             $berkas     = $request->file( 'berkas' );
             $namaBerkas = time() . '_' . $berkas->getClientOriginalName();
@@ -76,11 +77,15 @@ Selamat datang di sistem pendaftaran beasiswa online yang telah dikembangkan ole
         }
         else {
             return redirect()->route( 'hasil' )->with( 'error', 'Data Gagal diinputkan, lengkapi data terlebih dahulu' );
-        }"
+        }
+```
+         
 
 6. **Menggunakan Library atau Komponen Pre-Existing**
-   - Memanfaatkan library atau komponen pre-existing untuk meningkatkan efisiensi pengembangan dan fungsionalitas sistem.
+       Memanfaatkan library atau komponen pre-existing untuk meningkatkan efisiensi pengembangan dan fungsionalitas sistem.
     Library yang digunakan
-   - Bootstrap
-   - myChart
-Dengan berbagai fitur dan implementasi yang telah dilakukan, sistem pendaftaran beasiswa online ini diharapkan dapat memudahkan dan mempercepat proses pendaftaran bagi mahasiswa yang berminat. Jika ada pertanyaan atau masukan, jangan ragu untuk menghubungi [kontak Anda]. Terima kasih atas dedikasi dan kerja keras Anda dalam mengembangkan platform ini!
+       - Bootstrap
+       - myChart
+   pre-existing
+         - nama template untuk memanggil template header tittle
+Dengan berbagai fitur dan implementasi yang telah dilakukan, sistem pendaftaran beasiswa online ini diharapkan dapat memudahkan dan mempercepat proses pendaftaran bagi mahasiswa yang berminat.
